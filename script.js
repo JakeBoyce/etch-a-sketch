@@ -34,7 +34,7 @@ function renderGrid(num) {
   const boxes = document.querySelectorAll(".box");
   boxes.forEach(box => {
     box.addEventListener("mouseover", e => {
-      e.target.style.background = "black";
+      e.target.style.background = `hsl(${Math.floor(Math.random()*360)}, ${Math.floor(Math.random()*100)+20}%, 50%)`;
     });
   });
 }
