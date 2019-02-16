@@ -1,0 +1,15 @@
+.container {
+  box-sizing: border-box;
+  border: 1px solid gray;
+  display: grid;
+  width: 960px;
+  margin: 100px auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.box {
+  box-sizing: border-box;
+  height: 60px;
+  width: 60px;
+}
