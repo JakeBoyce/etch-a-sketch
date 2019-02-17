@@ -19,7 +19,7 @@ function clearGrid() {
 }
 
 function renderGrid(num) {
-  container.setAttribute("style", "grid-template: repeat(" + num + 
+  container.setAttribute("style", "grid-template: repeat(" + num +
                         ", 1fr) / repeat(" + num + ", 1fr);");
   for(let i=0; i < num; i++) {
     for(let j=0; j < num; j++) {
@@ -44,8 +44,8 @@ function renderGrid(num) {
         let green = parseInt(rgbValues[2]) * 0.9;
         e.target.style.background = "rgb(" + red + ", " + blue + ", " + green + ")";
       } else {
-        e.target.style.background = `hsl(${Math.floor(Math.random()*360)}, ${Math.floor(Math.random()*100)+20}%, 50%)`;
-        e.target.classList.add("selected");  
+        e.target.style.background = `rgb(${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)})`;
+        e.target.classList.add("selected");
       }
     });
   });
