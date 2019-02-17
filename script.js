@@ -36,7 +36,13 @@ function renderGrid(num) {
     box.addEventListener("mouseover", e => {
       if (e.target.classList.contains("selected")) {
         let currentColor = e.target.style.background;
-        console.log(currentColor);
+        let newColor = currentColor.replace("rgb", "");
+        let newColor2 = newColor.replace("(", "");
+        let rgbValues = newColor2.split(",");
+        let red = parseInt(rgbValues[0]) * 0.9;
+        let blue = parseInt(rgbValues[1]) * 0.9;
+        let green = parseInt(rgbValues[2]) * 0.9;
+        e.target.style.background = "rgb(" + red + ", " + blue + ", " + green + ")";
       } else {
         e.target.style.background = `hsl(${Math.floor(Math.random()*360)}, ${Math.floor(Math.random()*100)+20}%, 50%)`;
         e.target.classList.add("selected");  
