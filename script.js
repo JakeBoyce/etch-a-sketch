@@ -34,7 +34,13 @@ function renderGrid(num) {
   const boxes = document.querySelectorAll(".box");
   boxes.forEach(box => {
     box.addEventListener("mouseover", e => {
-      e.target.style.background = `hsl(${Math.floor(Math.random()*360)}, ${Math.floor(Math.random()*100)+20}%, 50%)`;
+      if (e.target.classList.contains("selected")) {
+        let currentColor = e.target.style.background;
+        console.log(currentColor);
+      } else {
+        e.target.style.background = `hsl(${Math.floor(Math.random()*360)}, ${Math.floor(Math.random()*100)+20}%, 50%)`;
+        e.target.classList.add("selected");  
+      }
     });
   });
 }
